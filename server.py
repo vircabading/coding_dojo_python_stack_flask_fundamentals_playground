@@ -1,5 +1,5 @@
 # /////////////////////////////////////////////////////////////////////
-# Subj: Coding Dojo > Python > Flask > Fundamentals: Understanding Routing
+# Subj: Coding Dojo > Python > Flask > Fundamentals: Playground
 # By: Virgilio D. Cabading Jr.  Created: October 27, 2021
 # /////////////////////////////////////////////////////////////////////
 
@@ -12,9 +12,19 @@ def index():
     return render_template('index.html')
 
 # **** Create a route that responds with the given word repeated as many times as specified in the URL ****
-@app.route('/repeat/<int:iterations>/<string:message>')
-def repeat_message (iterations, message):
-    return render_template('repeat.html', message=message, iterations=iterations)
+# @app.route('/repeat/<int:iterations>/<string:message>')
+# def repeat_message (iterations, message):
+#     return render_template('repeat.html', message=message, iterations=iterations)
+
+# **** Play App Route *************************************************
+@app.route('/play')
+def play():
+    return render_template('play.html')
+
+# **** Play Iterations App Route *************************************************
+@app.route('/play/<int:iterations>')
+def play_iterations(iterations):
+    return render_template('play_iterations.html', iterations=iterations)
 
 # **** Handle invalid routes ******************************************
 @app.errorhandler(404) 

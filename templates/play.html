@@ -1,8 +1,10 @@
 <!DOCTYPE html>
-<!-- /////////////////////////////////////////////////////////////////////
-# Subj:     Coding Dojo > Python > Flask > Fundamentals: Understanding Routing
-# By:       Virgilio D. Cabading Jr.  Created: October 27, 2021
-# ///////////////////////////////////////////////////////////////////// -->
+<!--//////////////////////////////////////////////////
+    Subj:
+    Project:
+    By:
+    Created:
+    //////////////////////////////////////////////////-->
 <html lang="en">
 
 <!--//// HEAD ////////////////////////////////////////-->
@@ -30,6 +32,17 @@
 
         .main-container {
             width: 80%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-around;
+            justify-items: center;
+            width: inherit;
         }
 
         .box {
@@ -48,6 +61,12 @@
 <body>
     <div class="main-container">
         <h1>Welcome!</h1>
+        <br>
+        <div class="container">
+            {% for i in range(3) %}
+                <div class="box"></div>
+            {% endfor %}
+        </div>
     </div>
 </body>
 </html>
