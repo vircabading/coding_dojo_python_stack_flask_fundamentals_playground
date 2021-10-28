@@ -9,22 +9,17 @@ app = Flask(__name__)                                   # Create a new instance 
 # **** Default App Route **********************************************
 @app.route('/')                                         # The "@" decorator associates this route with the function immediately following
 def index():
-    return render_template('index.html')
-
-# **** Create a route that responds with the given word repeated as many times as specified in the URL ****
-# @app.route('/repeat/<int:iterations>/<string:message>')
-# def repeat_message (iterations, message):
-#     return render_template('repeat.html', message=message, iterations=iterations)
+    return render_template('play_iterations_color.html', iterations=0, color='dodgerblue')
 
 # **** Play App Route *************************************************
 @app.route('/play')
 def play():
-    return render_template('play.html')
+    return render_template('play_iterations_color.html', iterations=3, color='dodgerblue')
 
 # **** Play Iterations App Route *************************************************
 @app.route('/play/<int:iterations>')
 def play_iterations(iterations):
-    return render_template('play_iterations.html', iterations=iterations)
+    return render_template('play_iterations_color.html', iterations=iterations, color='dodgerblue')
 
 # **** Play Iterations Color App Route *************************************************
 @app.route('/play/<int:iterations>/<string:color>')
@@ -38,6 +33,3 @@ def invalid_route(e):
 
 if __name__=="__main__":   # Ensure this file is being run directly and not from a different module    
     app.run(debug=True)    # Run the app in debug mode.
-
-
-
