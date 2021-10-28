@@ -26,6 +26,11 @@ def play():
 def play_iterations(iterations):
     return render_template('play_iterations.html', iterations=iterations)
 
+# **** Play Iterations Color App Route *************************************************
+@app.route('/play/<int:iterations>/<string:color>')
+def play_iterations_color(iterations,color):
+    return render_template('play_iterations_color.html', iterations=iterations, color=color)
+
 # **** Handle invalid routes ******************************************
 @app.errorhandler(404) 
 def invalid_route(e): 
